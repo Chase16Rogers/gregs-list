@@ -23,13 +23,21 @@
     </header>
     <main class="container">
         <div class="row mt-2">
-            <div class="col text-right">
+            <div class="col-6">
+                <button onclick="app.pagesController.toggleDisplay('cars')" class="btn btn-warning">Cars</button>
+                <button onclick="app.pagesController.toggleDisplay('houses')" class="btn btn-warning">Homes</button>
+                <button onclick="app.pagesController.toggleDisplay('jobs')" class="btn btn-warning">Jobs</button>
+            </div>
+            <div class="col-6 text-right">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#new-car-modal">+
+                <button id="addCars" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#new-car-modal">+
                     <i class="fa fa-car" aria-hidden="true"></i></button>
-                <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#new-house-modal">+ <i
-                        class="fa fa-briefcase" aria-hidden="true"></i></button>
-                <button class="btn btn-outline-info" data-toggle="modal" data-target="#new-job-modal">+ <i
+
+                <button id="addHouses" class="btn btn-outline-secondary" data-toggle="modal"
+                    data-target="#new-house-modal">+ <i class="fa fa-briefcase" aria-hidden="true"></i></button>
+
+                <button id="addJobs" class="btn btn-outline-info" data-toggle="modal" data-target="#new-job-modal">+ <i
                         class="fa fa-home" aria-hidden="true"></i></button>
 
                 <!-- Car Modal -->
@@ -124,9 +132,15 @@
 
             </div>
         </div>
-        <div class="row" id="cars"></div>
-        <div class="row" id="houses"></div>
-        <div class="row" id="jobs"></div>
+        <div class="row d-none" id="cars"></div>
+        <div class="row d-none" id="houses"></div>
+        <div class="row d-none" id="jobs"></div>
+        <div class="row" id="welcome">
+            <div class="col text-center">
+                <h2>WELCOME TO GREGSLIST</h2>
+                <h5>Not to be confused with CraigsList</h5>
+            </div>
+        </div>
 
     </main>
     <footer class="container-fluid bg-dark text-light">
