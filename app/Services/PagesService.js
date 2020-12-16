@@ -10,6 +10,8 @@ class PagesService {
     let addJob = document.getElementById("addHouses")
     let addHouse = document.getElementById("addJobs")
 
+    document.getElementById("welcome").classList.add("d-none")
+
     switch (page) {
       case "cars":
         carRow.classList.remove("d-none")
@@ -35,8 +37,17 @@ class PagesService {
         addJob.classList.remove("d-none")
         addHouse.classList.add("d-none")
         break;
+      case "home":
+      default:
+        document.getElementById("welcome").classList.remove("d-none")
+        carRow.classList.add("d-none")
+        jobRow.classList.add("d-none")
+        houseRow.classList.add("d-none")
+        addCar.classList.remove("d-none")
+        addJob.classList.remove("d-none")
+        addHouse.classList.remove("d-none")
+        break;
     }
-    document.getElementById("welcome").classList.add("d-none")
   }
 
 }
