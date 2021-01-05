@@ -15,10 +15,6 @@ export default class HousesController {
     _drawHouses()
   }
 
-  deleteHouse(id) {
-    houseService.deleteHouse(id)
-  }
-
   createHouse() {
     window.event.preventDefault()
     let form = window.event.target
@@ -35,4 +31,7 @@ export default class HousesController {
     $("#new-house-modal").modal('hide')
   }
 
+  deleteHouse(id) {
+    houseService.deleteHouse(id)
+  }
 }
