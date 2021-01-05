@@ -16,6 +16,11 @@ export default class HousesController {
     _drawHouses()
   }
 
+  getHouses() {
+    try { houseService.getHouses() }
+    catch (error) { console.error(error) }
+  }
+
   createHouse() {
     window.event.preventDefault()
     let form = window.event.target

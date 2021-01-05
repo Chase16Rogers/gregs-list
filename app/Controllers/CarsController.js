@@ -16,6 +16,11 @@ export default class CarsController {
   constructor() {
     ProxyState.on("cars", _drawCars)
     _drawCars()
+    this.getCars()
+  }
+
+  getCars() {
+    try { carsService.getCars() } catch (error) { console.error(error) }
   }
 
   createCar() {
@@ -31,15 +36,20 @@ export default class CarsController {
       imgUrl: form['imgUrl'].value
     }
     carsService.createCar(newCar)
-    console.log(7)
-    // @ts-ignore
-    form.reset()
-    // @ts-ignore
+    try { carsService.createCar() }
+    catch (error) { console.error(error) }
     $("#new-car-modal").modal('hide');
   }
 
 
   deleteCar(id) {
-    carsService.deleteCar(id)
+    try { carsService.deleteCar(id) }
+    catch (error) { console.error(error) }
   }
+
+  bid(id, price) {
+    try { carsService.bid() }
+    catch (error) { console.error(error) }
+  }
+
 }
