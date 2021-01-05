@@ -2,8 +2,8 @@ import { generateId } from "../Utils/GenerateId.js"
 
 
 export default class Job {
-  constructor({ bedrooms, bathrooms, levels, imgUrl, year, price, description }) {
-    this.id = generateId()
+  constructor({ bedrooms, bathrooms, levels, imgUrl, year, price, description, id }) {
+    this.id = id
     this.bedrooms = bedrooms
     this.levels = levels
     this.bathrooms = bathrooms
@@ -28,6 +28,7 @@ export default class Job {
         <h4>${this.levels} story</h4>
         <p>${this.description}</p>
             <div class="text-right">
+                <button type="button" class="btn btn-secondary" onclick="app.jobsController.bid('${this.id}', '${this.price += 100}')">Bid</button>
                 <button type="button" class="btn btn-danger" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>
             </div>
         </div>
