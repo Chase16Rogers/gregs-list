@@ -9,11 +9,13 @@ class PagesService {
     let addCar = document.getElementById("addCars")
     let addJob = document.getElementById("addHouses")
     let addHouse = document.getElementById("addJobs")
+    let main = document.getElementById("main")
 
     document.getElementById("welcome").classList.add("d-none")
 
     switch (page) {
       case "cars":
+        main.classList.remove("d-flex")
         carRow.classList.remove("d-none")
         jobRow.classList.add("d-none")
         houseRow.classList.add("d-none")
@@ -22,6 +24,7 @@ class PagesService {
         addHouse.classList.add("d-none")
         break;
       case "houses":
+        main.classList.remove("d-flex")
         carRow.classList.add("d-none")
         jobRow.classList.add("d-none")
         houseRow.classList.remove("d-none")
@@ -30,6 +33,7 @@ class PagesService {
         addHouse.classList.remove("d-none")
         break;
       case "jobs":
+        main.classList.remove("d-flex")
         carRow.classList.add("d-none")
         jobRow.classList.remove("d-none")
         houseRow.classList.add("d-none")
@@ -39,6 +43,7 @@ class PagesService {
         break;
       case "home":
       default:
+        main.classList.add("d-flex")
         document.getElementById("welcome").classList.remove("d-none")
         carRow.classList.add("d-none")
         jobRow.classList.add("d-none")

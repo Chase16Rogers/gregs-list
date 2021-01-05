@@ -22,10 +22,11 @@ class CarsService {
   async bid(id, newPrice) {
     let carData = { price: newPrice }
     let res = await api.put("cars/" + id, carData)
-    let oldCarIndex = ProxyState.cars.findIndex(c => c.id == id)
-    let temp = ProxyState.cars
-    temp.splice(oldCarIndex, 1, new Car(res.data))
-    ProxyState.cars = temp
+    this.getCars()
+    // let oldCarIndex = ProxyState.cars.findIndex(c => c.id == id)
+    // let temp = ProxyState.cars
+    // temp.splice(oldCarIndex, 1, new Car(res.data))
+    // ProxyState.cars = temp
   }
 
 }
