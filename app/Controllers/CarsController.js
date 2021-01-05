@@ -48,7 +48,7 @@ export default class CarsController {
   }
 
   bid(id, price) {
-    try { carsService.bid() }
+    try { carsService.bid(id, price) }
     catch (error) { console.error(error) }
   }
 

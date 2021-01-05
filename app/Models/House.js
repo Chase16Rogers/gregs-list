@@ -2,8 +2,8 @@ import { generateId } from "../Utils/GenerateId.js"
 
 export default class House {
 
-  constructor({ company, jobTitle, hours, rate, description }) {
-    this.id = generateId()
+  constructor({ company, jobTitle, hours, rate, description, id }) {
+    this.id = id
     this.company = company
     this.jobTitle = jobTitle
     this.hours = hours
@@ -23,6 +23,7 @@ export default class House {
     <p>$${this.rate} an hour.</p>
     <p>${this.description}</p>
         <div class="text-right">
+            <button type="button" class="btn btn-secondary" onclick="app.housesController.bid('${this.id}', '${this.rate += 1}')">Apply</button>
             <button type="button" class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')">Delete</button>
         </div>
     </div>

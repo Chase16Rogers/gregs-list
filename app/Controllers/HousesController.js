@@ -12,7 +12,7 @@ function _drawHouses() {
 export default class HousesController {
   constructor() {
     ProxyState.on("houses", _drawHouses)
-
+    this.getHouses()
     _drawHouses()
   }
 
@@ -31,13 +31,21 @@ export default class HousesController {
       rate: form['rate'].value,
       description: form['description'].value,
     }
-    houseService.createHouse(houseForm)
+
+    try { houseService.createHouse(houseForm) }
+    catch (error) { console.error(error) }
     form.reset()
 
     $("#new-house-modal").modal('hide')
   }
 
   deleteHouse(id) {
-    houseService.deleteHouse(id)
+    try { houseService.deleteHouse(id) }
+    catch (error) { console.error(error) }
+  }
+
+  bid(id, price) {
+    try { houseService.bid(id, price) }
+    catch (error) { console.error(error) }
   }
 }
